@@ -17,9 +17,15 @@ class SearchFromFile:
         return [line for line in lines if word in line]
     
     def user_input(self):
+        """Getting user input."""
         user_input = str(input("enter your word: "))
         return user_input
     
+    def highlight_word(self):
+        """Highlighting word that the user inputs."""
+        return 0
+
+
 if __name__ == "__main__":
     searcher = SearchFromFile()
     word = searcher.user_input()
