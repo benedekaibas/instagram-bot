@@ -27,7 +27,7 @@ class SearchFromFile:
         lines = self.open_file()
         highlighted_lines = []
         for line in lines:
-            highlighted_line = line.replace(word, f"\033[1;31;40m{word}\033[0m")  # Highlighting the word
+            highlighted_line = line.replace(word, f"\033[1;31;40m{word}\033[0m")
             highlighted_lines.append(highlighted_line)
         return highlighted_lines
 
