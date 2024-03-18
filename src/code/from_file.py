@@ -23,11 +23,20 @@ class SearchFromFile:
     
     def highlight_word(self):
         """Highlighting word that the user inputs."""
+        word = self.user_input()
+        lines = self.open_file()
+        highlighted_lines = []
+        for line in lines:
+            highlighted_line = line.replace(word, f"\033[1;31;40m{word}\033[0m")  # Highlighting the word
+            highlighted_lines.append(highlighted_line)
+        return highlighted_lines
+
+    def count_words(self):
+        """Counting the searched words."""
         return 0
 
 
 if __name__ == "__main__":
     searcher = SearchFromFile()
-    word = searcher.user_input()
-    lines_with_word = searcher.search_words(word)
-    print(lines_with_word)
+    highlighted_lines = searcher.highlight_word()
+    print('\n'.join(highlighted_lines))
