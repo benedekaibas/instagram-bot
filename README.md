@@ -2,4 +2,9 @@
 
 ## Search in files
 
+With the help of the code, you can search for everything in a large text file.  
+The pictures below will guide you through the whole process of entering a text file into the program and search for whatever you want. 
+
 ## Search on a website
+
+
