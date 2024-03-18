@@ -5,5 +5,5 @@ class SearchFromFile:
         """Opening a text file: """
         file_path = "test.txt"
         with open(file_path, "r") as fh:
-            for words in file_path:
-                return words
+            lines = fh.readlines()
+            return lines
