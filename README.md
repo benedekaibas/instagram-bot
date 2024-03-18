@@ -1,4 +1,6 @@
 # Search For Everything (SFE) is a tool that allows you to search for words, and phrases in a file or on a website.
+![large](https://github.com/benedekaibas/SFE/assets/82393336/119c9aba-e0f5-48aa-aa26-44a940347908)
+
 
 ❗NOTE: The readme is yet not 100% since the code is in the process phase. After the code is working efficiently you will be able to navigate through the readme!❗
 
