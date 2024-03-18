@@ -22,6 +22,6 @@ class SearchFromFile:
     
 if __name__ == "__main__":
     searcher = SearchFromFile()
-    word = searcher.user_input() # replace with the word you want to search for
+    word = searcher.user_input()
     lines_with_word = searcher.search_words(word)
     print(lines_with_word)
