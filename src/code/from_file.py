@@ -8,15 +8,20 @@ class SearchFromFile:
         file_path = "test.txt"
         with open(file_path, "r") as fh:
             lines = fh.readlines()
-            return lines
+            lines_lower_case = [line.lower() for line in lines]
+            return lines_lower_case
     
     def search_words(self, word):
         """Searching for words and/or phrases."""
         lines = self.open_file()
         return [line for line in lines if word in line]
     
+    def user_input(self):
+        user_input = str(input("enter your word: "))
+        return user_input
+    
 if __name__ == "__main__":
     searcher = SearchFromFile()
-    word = "your_search_word"  # replace with the word you want to search for
+    word = searcher.user_input() # replace with the word you want to search for
     lines_with_word = searcher.search_words(word)
     print(lines_with_word)
