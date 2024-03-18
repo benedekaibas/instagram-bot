@@ -3,6 +3,7 @@ class SearchFromFile:
 
     def open_file():
         """Opening a text file: """
-        with open(file_path, "w") as fh:
-            for url in telex_url:
-                fh.write(f"{url}\n")
+        file_path = "test.txt"
+        with open(file_path, "r") as fh:
+            for words in file_path:
+                return words
