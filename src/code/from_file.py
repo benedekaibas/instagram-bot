@@ -2,6 +2,7 @@
 class SearchFromFile:
     """Class for opening a file and search through it."""
     def __init__(self) -> None:
+        """Init function for the class."""
         pass
 
     def open_file(self):
