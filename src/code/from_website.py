@@ -1,5 +1,8 @@
 
 import requests
+from bs4 import BeautifulSoup
+
+
 
 class SearchFromWebsite:
     """Class for scraping website."""
@@ -10,8 +13,8 @@ class SearchFromWebsite:
     def read_website(self):
         url = "https://www.geeksforgeeks.org/implementing-web-scraping-python-beautiful-soup/"
         scrape = requests.get(url)
-        content = scrape.content
-        return content
+        content = BeautifulSoup(scrape.content, 'html5lib')
+        return content.prettify()
     
 if __name__ == "__main__":
     search = SearchFromWebsite()
