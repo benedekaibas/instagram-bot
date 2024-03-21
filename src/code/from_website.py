@@ -17,6 +17,9 @@ class SearchFromWebsite:
         content = BeautifulSoup(scrape.content, 'html5lib')
         return content.prettify()
 
+    def get_data_website(self):
+        content = self.read_website()
+        
 
 
 if __name__ == "__main__":
