@@ -12,8 +12,8 @@ class SearchFromWebsite:
         """Read data from the website."""
         url = "https://www.geeksforgeeks.org/implementing-web-scraping-python-beautiful-soup/"
         scrape = requests.get(url)
-        content = BeautifulSoup(scrape.content, 'html5lib')
-        return content.prettify()
+        #content = BeautifulSoup(scrape.content, 'html5lib')
+        return scrape.text
 
     def get_data_website(self):
         content = self.read_website()
