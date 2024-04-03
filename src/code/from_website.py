@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+from from_file import SearchFromFile
+
 class SearchFromWebsite:
     """Class for scraping website."""
     def __init__(self) -> None:
