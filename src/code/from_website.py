@@ -16,11 +16,12 @@ class SearchFromWebsite:
 
     def get_data_website(self):
         content = self.read_website()
-        return content
+        text = content.get_text()
+        return text
         
-
+# TODO: We should implement a function that removes blank lines since the text is full of blank lines.
 
 if __name__ == "__main__":
     search = SearchFromWebsite()
-    website_content = search.read_website()
-    print(website_content)
+    text_website = search.get_data_website()
+    print(text_website)
