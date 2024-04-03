@@ -21,7 +21,14 @@ class SearchFromWebsite:
         
 # TODO: We should implement a function that removes blank lines since the text is full of blank lines.
 
+    def blank_line(self):
+        """Removing blank lines."""
+        text_blank_lines = self.get_data_website()
+        lines = text_blank_lines.split('\n')
+        non_blank_lines = [line for line in lines if line.strip() != '']
+        return '\n'.join(non_blank_lines)
+
 if __name__ == "__main__":
     search = SearchFromWebsite()
-    text_website = search.get_data_website()
+    text_website = search.blank_line()
     print(text_website)
