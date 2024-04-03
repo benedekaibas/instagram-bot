@@ -17,6 +17,7 @@ class SearchFromWebsite:
 
     def get_data_website(self):
         content = self.read_website()
+        return content
         
 
 
