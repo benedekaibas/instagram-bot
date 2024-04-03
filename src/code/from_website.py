@@ -1,4 +1,3 @@
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -12,8 +11,8 @@ class SearchFromWebsite:
         """Read data from the website."""
         url = "https://www.geeksforgeeks.org/implementing-web-scraping-python-beautiful-soup/"
         scrape = requests.get(url)
-        #content = BeautifulSoup(scrape.content, 'html5lib')
-        return scrape.text
+        content = BeautifulSoup(scrape.content, 'html.parser')
+        return content
 
     def get_data_website(self):
         content = self.read_website()
