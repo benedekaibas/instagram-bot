@@ -19,7 +19,7 @@ class SearchFromWebsite:
         text = content.get_text()
         return text
         
-# TODO: We should implement a function that removes blank lines since the text is full of blank lines.
+# We should implement a function that removes blank lines since the text is full of blank lines.
 
     def blank_line(self):
         """Removing blank lines."""
@@ -27,6 +27,9 @@ class SearchFromWebsite:
         lines = text_blank_lines.split('\n')
         non_blank_lines = [line for line in lines if line.strip() != '']
         return '\n'.join(non_blank_lines)
+    
+    def search_word(self):
+        return 0
 
 if __name__ == "__main__":
     search = SearchFromWebsite()
