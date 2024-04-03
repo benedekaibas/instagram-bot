@@ -2,8 +2,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
-
 class SearchFromWebsite:
     """Class for scraping website."""
     def __init__(self) -> None:
