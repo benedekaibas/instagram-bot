@@ -4,7 +4,7 @@
 </p>
 
 
-❗NOTE: The readme is yet not 100% since the code is in the process phase. After the code is working efficiently you will be able to navigate through the readme!❗
+❗**NOTE**: The readme is yet not 100% since the code is in the process phase. After the code is working efficiently you will be able to navigate through the readme!❗
 
 ## 🔍💾 Search in files
 
