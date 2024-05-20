@@ -22,7 +22,14 @@ class Login:
 
         return self.username, self.password
     
-    def check_followers(self):
+    def user_login(self):
         """Checking user's followers."""
         loader = instaloader.Instaloader()
         return loader.login(self.username, self.password)
+    
+    def check_followers(self):
+        """Checking the followers of the given user."""
+        loader = instaloader.Instaloader()
+        user_profile = instaloader.Profile.from_username(loader.context, self.username)
+        followers = user_profile.get_followers()
+        return followers
