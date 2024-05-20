@@ -31,7 +31,10 @@ class Login:
     def check_followers(self):
         """Checking the followers of the given user."""
         user_profile = instaloader.Profile.from_username(self.loader.context, self.username)
-        followers = user_profile.get_followers()
 
-        for follower in followers:
+        for follower in user_profile.get_followers():
             console.print(follower)
+
+    def check_followe(self):
+        """Checking the followees of the given user."""
+
