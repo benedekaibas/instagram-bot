@@ -1,5 +1,7 @@
 """Login for the user's Instagram profile."""
 
+import instaloader
+
 class Login:
     """Class containing the needed functions."""
 
