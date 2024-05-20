@@ -14,7 +14,7 @@ class Login:
         self.username = username
         self.password = password
 
-    def user_login(self):
+    def user_login_information(self):
         """Do the login based on user's information."""
 
         self.username = input("Enter your username: ")
