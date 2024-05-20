@@ -1,11 +1,10 @@
-"""This is the main file of the project"""
+"""Main file for calling classes from other files."""
+
+class Main:
+    def __init__(self):
+        return None
 
 
 
-class SearchForEverything:
-    """This is the class for calling other files and giving the right output for the user."""
-    
-    def call_files():
-        """Calling other classes from files."""
-        return 0
-    
+if __name__ == "__main__":
+    Main
