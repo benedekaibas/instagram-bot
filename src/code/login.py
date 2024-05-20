@@ -17,3 +17,6 @@ class Login:
 
         return self.username, self.password
     
+    def check_followers(self):
+        """Checking user's followers."""
+        
