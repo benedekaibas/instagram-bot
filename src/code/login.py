@@ -8,6 +8,7 @@ class Login:
     def __init__(self, username, password):
         self.username = username
         self.password = password
+        self.loader = instaloader.Instaloader()
 
     def user_login(self):
         """Do the login based on user's information."""
@@ -19,4 +20,4 @@ class Login:
     
     def check_followers(self):
         """Checking user's followers."""
-        
+        return self.loader.login(self.username, self.password)

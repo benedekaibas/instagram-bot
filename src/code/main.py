@@ -1,12 +1,18 @@
 """Main file for calling classes from other files."""
 
-from code.login import Login
+from login import Login
 
 class Main:
     def __init__(self):
         pass
-
+    
+    def run(self):
+        login = Login
+        login.user_login(self)
+        login.check_followers(self)
+    
 
 
 if __name__ == "__main__":
-    Main
+    main = Main()
+    main.run()
