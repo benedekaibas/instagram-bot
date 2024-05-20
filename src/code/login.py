@@ -16,6 +16,7 @@ class Login:
         self.username = username
         self.password = password
         self.loader = instaloader.Instaloader()
+
     def user_login_information(self):
         """Do the login based on user's information."""
 
@@ -34,7 +35,7 @@ class Login:
         for follower in instaloader.Profile.from_username(self.loader.context, self.username).get_followers():
             console.print(follower)
 
-    def check_followe(self):
+    def check_followee(self):
         """Checking the followees of the given user."""
         for followee in instaloader.Profile.from_username(self.loader.context, self.username).get_followees():
             console.print(followee)

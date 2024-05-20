@@ -11,6 +11,7 @@ class Main:
         login.user_login_information()
         login.user_login()
         login.check_followers()
+        login.check_followee()
     
 
 
