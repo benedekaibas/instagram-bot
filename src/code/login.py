@@ -1,11 +1,13 @@
 """Login for the user's Instagram profile."""
 
 import instaloader
-
+from rich.console import Console
 """
 username: bet3655416
 password: Pythonproba99-
 """
+console = Console()
+
 
 class Login:
     """Class containing the needed functions."""
@@ -30,4 +32,6 @@ class Login:
         """Checking the followers of the given user."""
         user_profile = instaloader.Profile.from_username(self.loader.context, self.username)
         followers = user_profile.get_followers()
-        return followers
+
+        for follower in followers:
+            console.print(follower)
