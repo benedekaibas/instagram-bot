@@ -1,8 +1,12 @@
+"""Unittest for the project"""
+
 import unittest
 from unittest.mock import patch, MagicMock
 from code.login import Login
 
 class TestLogin(unittest.TestCase):
+    """Unittest for the login.py file."""
+
     @patch('login.instaloader')
     def setUp(self, mock_instaloader):
         self.mock_instaloader = mock_instaloader
