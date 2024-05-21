@@ -44,7 +44,7 @@ class Login:
 
     def count_information(self):
         """Counting followers and followees."""
-        followers = list(self.check_followers())
-        followees = list(self.check_followee())
+        followers = str(self.check_followers())
+        followees = str(self.check_followee())
         console.print(f"You have {len(followers)} followers.")
         console.print(f"You have {len(followees)} followes.")
