@@ -16,7 +16,8 @@ class Main:
         login.check_followers()
         console.print("")
         login.check_followee()
-    
+        console.print("")
+        login.count_information()
 
 
 if __name__ == "__main__":
