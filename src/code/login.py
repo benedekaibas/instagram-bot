@@ -47,4 +47,4 @@ class Login:
         followers = str(self.check_followers())
         followees = str(self.check_followee())
         console.print(f"You have {len(followers)} followers.")
-        console.print(f"You have {len(followees)} followes.")
+        console.print(f"You have {len(followees)} followees.")
