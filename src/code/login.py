@@ -48,3 +48,6 @@ class Login:
         followees = str(self.check_followee())
         console.print(f"You have {len(followers)} followers.")
         console.print(f"You have {len(followees)} followees.")
+
+    def posting_picture(self):
+        """Posting a selected picture from the computer using the bot."""
