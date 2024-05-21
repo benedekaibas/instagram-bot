@@ -40,6 +40,7 @@ class Login:
         """Checking the followees of the given user."""
         for followee in instaloader.Profile.from_username(self.loader.context, self.username).get_followees():
             console.print(followee)
+        return followee
 
     def count_information(self):
         """Counting followers and followees."""
