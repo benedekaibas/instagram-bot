@@ -1,6 +1,9 @@
 """Main file for calling classes from other files."""
 
 from login import Login
+from rich.console import Console
+
+console = Console()
 
 class Main:
     def __init__(self):
@@ -11,6 +14,7 @@ class Main:
         login.user_login_information()
         login.user_login()
         login.check_followers()
+        console.print("")
         login.check_followee()
     
 
