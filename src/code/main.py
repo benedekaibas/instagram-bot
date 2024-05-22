@@ -18,6 +18,7 @@ class Main:
         login.check_followee()
         console.print("")
         login.count_information()
+        login.download_picture()
 
 
 if __name__ == "__main__":
