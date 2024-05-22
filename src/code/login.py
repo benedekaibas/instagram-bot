@@ -57,5 +57,3 @@ class Login:
         if answer.lower() == 'y':
             for picture in pictures:
                 self.loader.download_post(picture, target = "instagram")
-        else:
-            pass
