@@ -52,4 +52,5 @@ class Login:
     def download_picture(self):
         """Posting a selected picture from the computer using the bot."""
         pictures = instaloader.Profile.from_username(self.loader.context, "instagram").get_posts()
-        console.print(pictures)
+        for picture in pictures:
+            self.loader.download_post(picture, target = "instagram")
