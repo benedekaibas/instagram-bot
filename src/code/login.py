@@ -1,5 +1,6 @@
 """Login for the user's Instagram profile."""
 
+import sys, os, glob, shutil
 import instaloader
 from rich.console import Console
 """
@@ -57,4 +58,5 @@ class Login:
         answer = str(input("Do you want to download pictures and videos from instagram (y/n): "))
         if answer.lower() == 'y':
             for picture in pictures:
-                self.loader.download_post(picture, target = self.username)
+                download_picture = self.loader.download_post(picture, target = self.username)
+                shutil.move(download_picture, self.download_location)

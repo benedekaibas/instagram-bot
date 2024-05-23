@@ -10,7 +10,7 @@ class Main:
         pass
     
     def run(self):
-        login = Login('', '')
+        login = Login('', '', '')
         login.user_login_information()
         login.user_login()
         login.check_followers()
