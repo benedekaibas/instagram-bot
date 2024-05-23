@@ -53,10 +53,15 @@ class Login:
     def download_picture(self):
         """Posting a selected picture from the computer using the bot."""
         pictures = instaloader.Profile.from_username(self.loader.context, self.username).get_posts()
-        self.download_location = "src/code/pictures"
-
+        self.download_location = "/Users/benedekkaibas/Desktop/instagram-bot/src/code/pictures"
+        if os.path.exists(self.download_location):
+            console.print("Path does exist")
+        else:
+            console.print("Path does not exist")
         answer = str(input("Do you want to download pictures and videos from instagram (y/n): "))
         if answer.lower() == 'y':
             for picture in pictures:
-                download_picture = self.loader.download_post(picture, target = self.username)
-                shutil.move(download_picture, self.download_location)
+                self.loader.download_post(picture, target=self.username)
+                files = glob.glob(os.path.join(self.username, '*'))
+                for file in files:
+                    shutil.move(file, self.download_location)
