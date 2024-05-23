@@ -12,11 +12,11 @@ console = Console()
 class Login:
     """Class containing the needed functions."""
 
-    def __init__(self, username, password):
+    def __init__(self, username, password, download_location):
         self.username = username
         self.password = password
         self.loader = instaloader.Instaloader()
-
+        self.download_location = download_location
     def user_login_information(self):
         """Do the login based on user's information."""
 
@@ -52,6 +52,7 @@ class Login:
     def download_picture(self):
         """Posting a selected picture from the computer using the bot."""
         pictures = instaloader.Profile.from_username(self.loader.context, self.username).get_posts()
+        self.download_location = "src/code/pictures"
 
         answer = str(input("Do you want to download pictures and videos from instagram (y/n): "))
         if answer.lower() == 'y':
