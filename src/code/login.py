@@ -65,3 +65,4 @@ class Login:
                 files = glob.glob(os.path.join(self.username, '*'))
                 for file in files:
                     shutil.move(file, self.download_location)
+                    shutil.rmtree(self.username)
