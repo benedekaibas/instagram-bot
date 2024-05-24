@@ -85,3 +85,6 @@ class InstaBot():
         """Login method for the bot."""
         ig_username = self.browser.find_element(self.username)
         ig_password = self.browser.find_element(self.password)
+
+        ig_username.send_keys(self.username)
+        ig_password.send_keys(self.password)
