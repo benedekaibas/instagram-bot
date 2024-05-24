@@ -21,7 +21,7 @@ class Login:
         self.loader = instaloader.Instaloader()
         self.download_location = download_location
         self.browser = webdriver.Chrome()
-
+        self.url = "https://www.instagram.com/"
     def user_login_information(self):
         """Do the login based on user's information."""
 
@@ -76,4 +76,4 @@ class Login:
 
     def follower_bot(self):
         """Bot for sending follow request by username."""
-        
+        self.browser.get(self.url)
