@@ -20,7 +20,6 @@ class Main:
         login.count_information()
         login.download_picture()
         login.remove_folder()
-         
 
 if __name__ == "__main__":
     main = Main()

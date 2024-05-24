@@ -76,4 +76,9 @@ class Login:
 
     def follower_bot(self):
         """Bot for sending follow request by username."""
+        follower = self.check_followers()
         self.browser.get(self.url)
+
+
+
+
