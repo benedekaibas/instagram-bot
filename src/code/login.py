@@ -89,3 +89,5 @@ class InstaBot():
 
         ig_username.send_keys(self.username)
         ig_password.send_keys(self.password)
+        ig_password.send_keys(Keys.ENTER) # this is where the bot presses the login button
+    
