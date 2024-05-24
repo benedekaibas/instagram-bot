@@ -76,13 +76,12 @@ class Login:
 class InstaBot():
     def __init__(self):
         """Using the selenium library for the code and storing it."""
-        self.browser = webdriver.Chrome()
+        self.username = os.environ.get('USERNAME')
+        self.password = os.environ.get('PASSWORD')
         self.url = "https://www.instagram.com/"
+        self.browser = webdriver.Chrome(self.url)
 
-    def follower_bot(self):
-        """Bot for sending follow request by username."""
-        follower = self.check_followers()
-        self.browser.get(self.url)
-        search = self.browser.find_element_by_xpath('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/input')
-        search.send_keys(follower)
-        
+    def bot_login(self):
+        """Login method for the bot."""
+        ig_username = self.browser.find_element(self.username)
+        ig_password = self.browser.find_element(self.password)
