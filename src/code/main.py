@@ -19,6 +19,7 @@ class Main:
         console.print("")
         login.count_information()
         login.download_picture()
+        login.remove_folder()
 
 
 if __name__ == "__main__":
