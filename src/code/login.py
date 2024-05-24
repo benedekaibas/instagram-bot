@@ -3,6 +3,8 @@
 import sys, os, glob, shutil
 import instaloader
 from rich.console import Console
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 """
 username: bet3655416
 password: Pythonproba99-
@@ -18,6 +20,8 @@ class Login:
         self.password = password
         self.loader = instaloader.Instaloader()
         self.download_location = download_location
+        self.browser = webdriver.Chrome()
+
     def user_login_information(self):
         """Do the login based on user's information."""
 
