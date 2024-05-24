@@ -65,4 +65,7 @@ class Login:
                 files = glob.glob(os.path.join(self.username, '*'))
                 for file in files:
                     shutil.move(file, self.download_location)
-                    shutil.rmtree(self.username)
+    
+    def remove_folder(self):
+        """Remove folder that is not needed after content have been downloaded from Instagram."""
+        return shutil.rmtree(self.username)
