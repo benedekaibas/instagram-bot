@@ -69,3 +69,7 @@ class Login:
     def remove_folder(self):
         """Remove folder that is not needed after content have been downloaded from Instagram."""
         return shutil.rmtree(self.username)
+
+    def follower_bot(self):
+        """Bot for sending follow request by username."""
+        
