@@ -79,12 +79,13 @@ class InstaBot():
         self.username = os.environ.get('USERNAME')
         self.password = os.environ.get('PASSWORD')
         self.url = "https://www.instagram.com/"
-        self.browser = webdriver.Chrome(self.url)
+        self.browser = webdriver.Chrome()
 
     def bot_login(self):
         """Login method for the bot."""
-        ig_username = self.browser.find_element(self.username)
-        ig_password = self.browser.find_element(self.password)
+        open_instagram = self.browser.get(self.url)
+        ig_username = open_instagram.find_element(self.username)
+        ig_password = open_instagram.find_element(self.password)
 
         ig_username.send_keys(self.username)
         ig_password.send_keys(self.password)
