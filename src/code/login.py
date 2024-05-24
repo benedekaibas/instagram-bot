@@ -78,6 +78,8 @@ class Login:
         """Bot for sending follow request by username."""
         follower = self.check_followers()
         self.browser.get(self.url)
+        search = self.driver.find_element_by_xpath('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/input')
+        search.send_keys(follower)
 
 
 
