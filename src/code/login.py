@@ -84,10 +84,15 @@ class InstaBot():
     def bot_login(self):
         """Login method for the bot."""
         open_instagram = self.browser.get(self.url)
-        ig_username = open_instagram.find_element(self.username)
-        ig_password = open_instagram.find_element(self.password)
+        ig_username = open_instagram.find_element_by_name(self.username)
+        ig_password = open_instagram.find_element_by_name(self.password)
 
         ig_username.send_keys(self.username)
         ig_password.send_keys(self.password)
         ig_password.send_keys(Keys.ENTER) # this is where the bot presses the login button
-    
+
+
+# we call instabot here only for test after that we have to call it from the main file.
+if __name__ == "__main__":
+    insta_bot = InstaBot()
+    insta_bot.bot_login()
