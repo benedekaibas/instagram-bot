@@ -20,8 +20,7 @@ class Login:
         self.password = password
         self.loader = instaloader.Instaloader()
         self.download_location = download_location
-        self.browser = webdriver.Chrome()
-        self.url = "https://www.instagram.com/"
+
     def user_login_information(self):
         """Do the login based on user's information."""
 
@@ -73,6 +72,12 @@ class Login:
     def remove_folder(self):
         """Remove folder that is not needed after content have been downloaded from Instagram."""
         return shutil.rmtree(self.username)
+
+class InstaBot():
+    def __init__(self):
+        """Using the selenium library for the code and storing it."""
+        self.browser = webdriver.Chrome()
+        self.url = "https://www.instagram.com/"
 
     def follower_bot(self):
         """Bot for sending follow request by username."""
