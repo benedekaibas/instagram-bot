@@ -92,6 +92,12 @@ class InstaBot():
         """Login method for the bot."""
         self.browser.get(self.url)
 
+        try:
+            cookies = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Accept"]')))
+            cookies.click()
+        except Exception as e:
+            print(f"Error while closing cookies window: {e}")
+
         ig_username = self.wait.until(EC.presence_of_element_located((By.NAME, 'username')))
         ig_password = self.wait.until(EC.presence_of_element_located((By.NAME, 'password')))
 
