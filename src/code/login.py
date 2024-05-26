@@ -5,10 +5,12 @@ import instaloader
 from rich.console import Console
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+
 """
 username: bet3655416
 password: Pythonproba99-
 """
+
 console = Console()
 
 
