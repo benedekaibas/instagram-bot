@@ -86,7 +86,7 @@ class InstaBot():
     def bot_login(self):
         """Login method for the bot."""
         self.browser.get('http://www.google.com') # MIGHT HAVE TO REMOVE THIS
-        self.browser.get(self.url) #maybe I should include the path of chrome on my laptop
+        self.browser.get(self.url) # maybe I should include the path of chrome on my laptop
         ig_username = self.browser.find_element_by_name(self.username)
         ig_password = self.browser.find_element_by_name(self.password)
 
