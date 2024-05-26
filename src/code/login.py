@@ -7,6 +7,8 @@ from rich.console import Console
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 """
 username: bet3655416
@@ -84,12 +86,13 @@ class InstaBot():
         self.password = os.environ.get('PASSWORD')
         self.url = "https://www.instagram.com/"
         self.browser = webdriver.Chrome()
+        self.wait = WebDriverWait(self.browser, 5)
 
     def bot_login(self):
         """Login method for the bot."""
         self.browser.get(self.url) # maybe I should include the path of chrome on my laptop
-        ig_username = self.browser.find_element(By.NAME, 'bet3655416')
-        ig_password = self.browser.find_element(By.NAME, 'Pythonproba99-')
+        ig_username = self.wait.until(EC.presence_of_element_located((By.NAME, 'bet3655416')))
+        ig_password = self.wait.until(EC.presence_of_element_located((By.NAME, 'Pythonproba99-')))
 
         # these functions are working
         ig_username.send_keys(self.username)
