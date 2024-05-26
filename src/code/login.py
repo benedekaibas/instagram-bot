@@ -92,16 +92,13 @@ class InstaBot():
         """Login method for the bot."""
         self.browser.get(self.url)
 
-        # Wait for the page to load and find the username and password fields
         ig_username = self.wait.until(EC.presence_of_element_located((By.NAME, 'username')))
         ig_password = self.wait.until(EC.presence_of_element_located((By.NAME, 'password')))
 
-        # Enter the username and password
         ig_username.send_keys('bet3655416')
         ig_password.send_keys('Pythonproba99-')
         ig_password.send_keys(Keys.ENTER)
 
-        # Wait for the page to load
         time.sleep(3)
 
 # we call instabot here only for test after that we have to call it from the main file.
