@@ -5,6 +5,7 @@ import instaloader
 from rich.console import Console
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
 """
 username: bet3655416
@@ -85,10 +86,9 @@ class InstaBot():
 
     def bot_login(self):
         """Login method for the bot."""
-        self.browser.get('http://www.google.com') # MIGHT HAVE TO REMOVE THIS
         self.browser.get(self.url) # maybe I should include the path of chrome on my laptop
-        ig_username = self.browser.find_element_by_name(self.username)
-        ig_password = self.browser.find_element_by_name(self.password)
+        ig_username = self.browser.find_element(By.NAME, 'username')
+        ig_password = self.browser.find_element(By.NAME, 'password')
 
         # these functions are working
         ig_username.send_keys(self.username)
