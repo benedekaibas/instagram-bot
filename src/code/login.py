@@ -1,5 +1,6 @@
 """Login for the user's Instagram profile."""
 
+import time
 import sys, os, glob, shutil
 import instaloader
 from rich.console import Console
@@ -87,14 +88,15 @@ class InstaBot():
     def bot_login(self):
         """Login method for the bot."""
         self.browser.get(self.url) # maybe I should include the path of chrome on my laptop
-        ig_username = self.browser.find_element(By.NAME, 'username')
-        ig_password = self.browser.find_element(By.NAME, 'password')
+        ig_username = self.browser.find_element(By.NAME, 'bet3655416')
+        ig_password = self.browser.find_element(By.NAME, 'Pythonproba99-')
 
         # these functions are working
         ig_username.send_keys(self.username)
         ig_password.send_keys(self.password)
         ig_password.send_keys(Keys.ENTER) # this is where the bot presses the login button
 
+        time.sleep(3)
 
 # we call instabot here only for test after that we have to call it from the main file.
 if __name__ == "__main__":
