@@ -125,6 +125,8 @@ class InstaBot():
             notifications.click()
         except Exception as e:
             print(f"Error while closing notifications tab: {e}")
+
+        time.sleep(5)
 """
     def scroll(self):
         time.sleep(10)
