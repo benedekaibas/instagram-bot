@@ -121,22 +121,22 @@ class InstaBot():
         time.sleep(5)
 
         try:
-            notifications = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Allow"]')))
+            notifications = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Not Now"]')))
             notifications.click()
         except Exception as e:
             print(f"Error while closing notifications tab: {e}")
 
         time.sleep(5)
-"""
+
     def scroll(self):
-        time.sleep(10)
-
-        return self.browser.execute_script("window.scrollTo(0, 200)")
-"""
-
+        
+        scroll = self.browser.find_element(By.TAG_NAME, "iframe")
+        ActionChains(scroll)\
+            .scroll_to_element(scroll)\
+            .perform()
 
 # we call instabot here only for test after that we have to call it from the main file.
 if __name__ == "__main__":
     insta_bot = InstaBot()
     insta_bot.bot_login()
-    #insta_bot.scroll()
+    insta_bot.scroll()
