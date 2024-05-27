@@ -130,13 +130,15 @@ class InstaBot():
 
     def scroll(self):
         """Automated script for scrolling through the website."""
-
         time.sleep(5)
-
-        iframe = self.browser.find_element(By.TAG_NAME, "iframe")
-        self.browser.switch_to.frame(iframe)
-        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        self.browser.switch_to.default_content()
+        last_height = self.browser.execute_script("return document.body.scrollHeight")
+        while True:
+            self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(2)  # Wait for the new content to load
+            new_height = self.browser.execute_script("return document.body.scrollHeight")
+            if new_height == last_height:  # If the new height is the same as the old height, we've reached the bottom
+                break
+            last_height = new_height
 
 
 # we call instabot here only for test after that we have to call it from the main file.
