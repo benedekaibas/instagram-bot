@@ -9,6 +9,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
+from selenium.webdriver import ActionChains
+
 
 """
 username: bet3655416
@@ -80,6 +83,8 @@ class Login:
         return shutil.rmtree(self.username)
 
 class InstaBot():
+    """Bot for interacting with the Instagram website."""
+
     def __init__(self):
         """Using the selenium library for the code and storing it."""
         self.username = os.environ.get('USERNAME')
@@ -105,9 +110,26 @@ class InstaBot():
         ig_password.send_keys('Pythonproba99-')
         ig_password.send_keys(Keys.ENTER)
 
-        time.sleep(3)
+        time.sleep(5)
+
+        try:
+            save_login = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Not now"]')))
+            save_login.click()
+        except Exception as e:
+            print(f"Error while closing save login window: {e}")
+
+        time.sleep(5)
+
+    def scroll(self):
+        """Automated scroll script."""
+        time.sleep(10)
+
+        return self.browser.execute_script("window.scrollTo(0, 200)")
+    
+
 
 # we call instabot here only for test after that we have to call it from the main file.
 if __name__ == "__main__":
     insta_bot = InstaBot()
     insta_bot.bot_login()
+    insta_bot.scroll()
