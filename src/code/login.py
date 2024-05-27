@@ -93,7 +93,7 @@ class InstaBot():
         self.browser.get(self.url)
 
         try:
-            cookies = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Accept"]')))
+            cookies = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Allow all cookies"]')))
             cookies.click()
         except Exception as e:
             print(f"Error while closing cookies window: {e}")
