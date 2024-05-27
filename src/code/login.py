@@ -113,23 +113,28 @@ class InstaBot():
         time.sleep(5)
 
         try:
-            save_login = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Not now"]')))
+            save_login = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Save info"]')))
             save_login.click()
         except Exception as e:
             print(f"Error while closing save login window: {e}")
 
         time.sleep(5)
 
+        try:
+            notifications = self.wait.until(EC.presence_of_element_located((By.XPATH, '//button[text()="Allow"]')))
+            notifications.click()
+        except Exception as e:
+            print(f"Error while closing notifications tab: {e}")
+"""
     def scroll(self):
-        """Automated scroll script."""
         time.sleep(10)
 
         return self.browser.execute_script("window.scrollTo(0, 200)")
-    
+"""
 
 
 # we call instabot here only for test after that we have to call it from the main file.
 if __name__ == "__main__":
     insta_bot = InstaBot()
     insta_bot.bot_login()
-    insta_bot.scroll()
+    #insta_bot.scroll()
