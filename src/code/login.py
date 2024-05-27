@@ -128,21 +128,24 @@ class InstaBot():
 
         time.sleep(5)
 
-    def scroll(self):
+    def scroll(self, question: str):
         """Automated script for scrolling through the website."""
-        time.sleep(5)
-        last_height = self.browser.execute_script("return document.body.scrollHeight")
-        while True:
-            self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(2)  # Wait for the new content to load
-            new_height = self.browser.execute_script("return document.body.scrollHeight")
-            if new_height == last_height:  # If the new height is the same as the old height, we've reached the bottom
-                break
-            last_height = new_height
+
+        if question == 'yes':
+            time.sleep(3)
+            last_height = self.browser.execute_script("return document.body.scrollHeight")
+
+            while True:
+                self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                time.sleep(2)
+                new_height = self.browser.execute_script("return document.body.scrollHeight")
+                if new_height == last_height:
+                    break
+                last_height = new_height
 
 
 # we call instabot here only for test after that we have to call it from the main file.
 if __name__ == "__main__":
     insta_bot = InstaBot()
     insta_bot.bot_login()
-    insta_bot.scroll()
+    insta_bot.scroll(input("Do you want to do an automated scroll down the page? (yes/no): "))
