@@ -129,11 +129,15 @@ class InstaBot():
         time.sleep(5)
 
     def scroll(self):
-        
-        scroll = self.browser.find_element(By.TAG_NAME, "iframe")
-        ActionChains(scroll)\
-            .scroll_to_element(scroll)\
-            .perform()
+        """Automated script for scrolling through the website."""
+
+        time.sleep(5)
+
+        iframe = self.browser.find_element(By.TAG_NAME, "iframe")
+        self.browser.switch_to.frame(iframe)
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        self.browser.switch_to.default_content()
+
 
 # we call instabot here only for test after that we have to call it from the main file.
 if __name__ == "__main__":
