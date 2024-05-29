@@ -87,11 +87,9 @@ class Login:
     
     def follower_followee_list(self):
         """Search for people who are following the given user."""
-
-        follower_list = []
-        follower = instaloader.Profile.from_username(self.loader.context, self.username).get_followers()
-        follower_list.append(follower)
-        return follower_list
+        followers = list(instaloader.Profile.from_username(self.loader.context, self.username).get_followers())
+        follower_count = len(followers)
+        return follower_count
 
 class InstaBot():
     """Bot for interacting with the Instagram website."""
