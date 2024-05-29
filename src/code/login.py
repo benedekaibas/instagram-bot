@@ -89,7 +89,7 @@ class Login:
         """Search for people who are following the given user."""
 
         follower_list = []
-        follower = self.check_followers()
+        follower = instaloader.Profile.from_username(self.loader.context, self.username).get_followers()
         follower_list.append(follower)
         return follower_list
 
