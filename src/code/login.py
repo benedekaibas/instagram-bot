@@ -70,16 +70,16 @@ class Login:
             console.print("Path does exist")
         else:
             console.print("Path does not exist")
-        answer = str(input("Do you want to download pictures and videos from instagram (y/n): "))
-        if answer.lower() == 'y':
+        self.answer = str(input("Do you want to download pictures and videos from instagram (y/n): "))
+        if self.answer.lower() == 'y':
             for picture in pictures:
                 self.loader.download_post(picture, target=self.username)
                 files = glob.glob(os.path.join(self.username, '*'))
                 for file in files:
                     shutil.move(file, self.download_location)
         else:
-            # jump to the follower_followee function since the remove folder function is connected to this function
-            self.follower_followee_list() 
+            self.follower_followee_list()
+
     
     def remove_folder(self):
         """Remove folder that is not needed after content have been downloaded from Instagram."""
