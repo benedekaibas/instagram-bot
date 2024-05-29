@@ -21,7 +21,7 @@ class Main:
         login.download_picture()
         if login.answer.lower() == 'y':
             login.remove_folder()
-        login.mutual_followers()
+        login.call_mutuals()
 
 
 if __name__ == "__main__":

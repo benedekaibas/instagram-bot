@@ -90,7 +90,11 @@ class Login:
         followers = set(my_profile.get_followers())
         followees = set(my_profile.get_followees())
         mutuals = followers & followees
-        console.print(mutuals)
+        return mutuals
+    
+    def call_mutuals(self):
+        mutual = self.mutual_followers()
+        console.print(mutual)
 
 
 class InstaBot():
