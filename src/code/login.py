@@ -78,18 +78,20 @@ class Login:
                 for file in files:
                     shutil.move(file, self.download_location)
         else:
-            self.follower_followee_list()
+            self.mutual_followers()
 
-    
     def remove_folder(self):
         """Remove folder that is not needed after content have been downloaded from Instagram."""
         return shutil.rmtree(self.username)
     
-    def follower_followee_list(self):
-        """Search for people who are following the given user."""
-        followers = list(instaloader.Profile.from_username(self.loader.context, self.username).get_followers())
-        follower_count = len(followers)
-        return follower_count
+    def mutual_followers(self):
+        """Find mutual followers (people who are following the user and are also followed by the user)."""
+        my_profile = instaloader.Profile.from_username(self.loader.context, self.username)
+        followers = set(my_profile.get_followers())
+        followees = set(my_profile.get_followees())
+        mutuals = followers & followees
+        console.print(mutuals)
+
 
 class InstaBot():
     """Bot for interacting with the Instagram website."""

@@ -21,7 +21,7 @@ class Main:
         login.download_picture()
         if login.answer.lower() == 'y':
             login.remove_folder()
-        login.follower_followee_list()
+        login.mutual_followers()
 
 
 if __name__ == "__main__":
