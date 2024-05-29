@@ -77,10 +77,21 @@ class Login:
                 files = glob.glob(os.path.join(self.username, '*'))
                 for file in files:
                     shutil.move(file, self.download_location)
+        else:
+            # jump to the follower_followee function since the remove folder function is connected to this function
+            self.follower_followee_list() 
     
     def remove_folder(self):
         """Remove folder that is not needed after content have been downloaded from Instagram."""
         return shutil.rmtree(self.username)
+    
+    def follower_followee_list(self):
+        """Search for people who are following the given user."""
+
+        follower_list = []
+        follower = self.check_followers()
+        follower_list.append(follower)
+        return follower_list
 
 class InstaBot():
     """Bot for interacting with the Instagram website."""
@@ -142,7 +153,7 @@ class InstaBot():
                 if new_height == last_height:
                     break
                 last_height = new_height
-
+    
 
 # we call instabot here only for test after that we have to call it from the main file.
 if __name__ == "__main__":
