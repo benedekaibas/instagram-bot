@@ -150,6 +150,7 @@ class InstaBot():
             time.sleep(3)
             last_height = self.browser.execute_script("return document.body.scrollHeight")
 
+            # think of an alternative way of doing this method
             while True:
                 self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                 time.sleep(2)
