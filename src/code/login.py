@@ -160,6 +160,7 @@ class InstaBot():
                 last_height = new_height
     
 
+
 # we call instabot here only for test after that we have to call it from the main file.
 if __name__ == "__main__":
     insta_bot = InstaBot()
