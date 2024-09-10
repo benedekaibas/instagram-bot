@@ -23,5 +23,5 @@ def find_element(list):
 
 if __name__ == "__main__":
     find_element_list = [1,2,3,4,5]
-    find_element_solution = palindrome(find_element_list)
+    find_element_solution = find_element(find_element_list)
     print(find_element_solution)

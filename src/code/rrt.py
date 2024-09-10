@@ -10,6 +10,9 @@ import math
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
+
+"""A good way of creating a function for calculating distances between objects."""
+
 def calc_distance(p_1, p_2):
     """
     Calculates distance between two points.
@@ -22,6 +25,10 @@ def calc_distance(p_1, p_2):
         Straight-line distance from p1->p2; scalar
     """
     return math.sqrt((p_2[0]-p_1[0])**2 + (p_2[1]-p_1[1])**2)
+
+
+"""--------------------------------------------------------------------------------"""
+
 
 def point_to_line(p_1, p_2, p_3):
     """
